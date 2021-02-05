@@ -4,5 +4,7 @@
     "titleBar.inactiveForeground": "#000000CC",
     "titleBar.activeBackground": "#FFC600",
     "titleBar.inactiveBackground": "#FFC600CC"
-  }
+},
+"prettier.tabWidth": 4,
+"editor.tabSize": 2
 }

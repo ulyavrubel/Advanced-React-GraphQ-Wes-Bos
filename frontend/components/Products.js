@@ -29,7 +29,7 @@ const ProductsListStyles = styled.div`
 export default function Products() {
     const {data, error, loading} = useQuery(ALL_PRODUCTS_QUERY);
 
-    if (loading)
+     if (loading)
         return <p>...Loading</p>;
 
     if (error)

@@ -11,7 +11,7 @@ export default function useForm(initial = {}) {
             value = parseInt(value);
 
         if (type == 'file')
-            value[0] = event.target.files;
+            [value] = event.target.files;
 
         setInputs({
             ...inputs,

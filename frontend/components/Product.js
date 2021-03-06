@@ -18,6 +18,16 @@ export default function Product({product}) {
             <p>
                 {description}
             </p>
+            <div className='buttonList'>
+                <Link href={{
+                    pathname: 'update',
+                    query: {
+                        id: product.id
+                    }
+                }}>
+                    Edit
+                </Link>
+            </div>
         </ItemStyles>
     );
 }

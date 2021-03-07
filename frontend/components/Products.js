@@ -1,4 +1,4 @@
-import { useQuery } from '@apollo/client';
+import {useQuery} from '@apollo/client';
 import gql from 'graphql-tag'
 import styled from 'styled-components';
 import Product from './Product';
@@ -33,7 +33,7 @@ export default function Products() {
         return <p>...Loading</p>;
 
     if (error)
-        return <p>Error: {error.message}</p>
+        return <DisplayError error={errror}/>;
 
     return (
         <div>

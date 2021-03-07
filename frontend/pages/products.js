@@ -1,9 +1,12 @@
-import Products from "../components/Products";
+import Pagination from '../components/Pagination';
+import Products from '../components/Products';
 
 export default function ProductsPage() {
   return (
     <div>
-      <Products/>
+        <Pagination page={1}/>
+        <Products/>
+        <Pagination page={1}/>
     </div>
   );
 }

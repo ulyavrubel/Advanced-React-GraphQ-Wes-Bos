@@ -43,7 +43,7 @@ export default function RequestReset() {
             <fieldset>
                 {
                     data?.sendUserPasswordResetLink === null &&
-                        <p>Success! chack ypur email for the link</p>
+                        <p>Success! check your email for the link</p>
                 }
                 <label htmlFor='email'>
                     Email

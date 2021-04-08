@@ -44,8 +44,6 @@ export default function Reset({token}) {
         ? {message: data.redeemUserPasswordResetToken.code}
         : undefined;
 
-    console.log(error);
-
     if (!inputs || loading)
         return <p>...Loading</p>;
 

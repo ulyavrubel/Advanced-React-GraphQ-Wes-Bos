@@ -21,7 +21,7 @@ export default function Cart() {
                 <CloseButton onClick={closeCart}>&times;</CloseButton>
             </header>
             <ul>
-                {me.cart.map(cartItem => <CartItem key={cartItem} cartItem={cartItem}/>)}
+                {me.cart.map(cartItem => <CartItem key={cartItem.id} cartItem={cartItem}/>)}
             </ul>
             <footer>
                 <p>{formatMoney(calcTotalPrice(me.cart))}</p>

@@ -11,7 +11,10 @@ export default function Nav() {
     const {openCart} = useCart();
 
     const cartCount = useMemo(
-        () => (user?.cart || []).reduce((tally, cartItem) => tally + cartItem.quantity, 0),
+        () => (user?.cart || []).reduce(
+            (tally, cartItem) => tally + (cartItem.product ? cartItem.quantity : 0),
+            0
+        ),
         [user]
     );
 

@@ -70,12 +70,12 @@ function CheckoutForm() {
 
         closeCart();
         setLoading(false);
-        setError(indefined);
+        setError(undefined);
         nProgress.done();
 
         router.push({
-            pathname: '/order',
-            query: {id: order.data.checkout.id}
+            pathname: `/order/${order.data.checkout.id}`
+            // query: {id: order.data.checkout.id}
         });
     }
 

@@ -45,8 +45,6 @@ function countItemsInAnOrder(order) {
 export default function OrdersPage() {
     const {data, error, loading} = useQuery(USER_ORDERS_QUERY);
 
-    console.log(data);
-
     if (loading)
         return <p>...Loading</p>;
 

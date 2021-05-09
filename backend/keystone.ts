@@ -7,10 +7,12 @@ import {ProductImage} from './schemas/ProductImage';
 import {CartItem} from './schemas/CartItem';
 import {OrderItem} from './schemas/OrderItem';
 import {Order} from './schemas/Order';
+import {Role} from './schemas/Role';
 import {withItemData, statelessSessions} from '@keystone-next/keystone/session'
 import {insertSeedData} from './seed-data';
 import {sendPasswordResetEmail} from './lib/mail';
 import {extendGraphqlSchema} from './mutations/index';
+import { permissionsList } from './schemas/fields';
 
 const databaseURL = process.env.DATABASE_URL || 'mongodb://localhost/keystone-sick-fits-tutorial';
 
@@ -58,19 +60,24 @@ export default withAuth(
             ProductImage,
             CartItem,
             OrderItem,
-            Order
+            Order,
+            Role
         }),
         extendGraphqlSchema,
         ui: {
             //TODO show the UI only who pass this test
             isAccessAllowed: ({session}) => {
-                // console.log(session);
                 return !!session?.data;
             }
         },
         session: withItemData(statelessSessions(sessionConfig), {
             //GrpahQL query
-            User: `id, name, email`
+            User: `
+                id
+                name
+                email
+                role { ${permissionsList.join(' ')} }
+            `
         })
     })
 );

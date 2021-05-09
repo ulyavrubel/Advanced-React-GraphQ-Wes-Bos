@@ -88,7 +88,5 @@ export default async function checkout(
     const cartItemIds = user.cart.map(({id}) => id);
     await context.lists.CartItem.deleteMany({ids: cartItemIds});
 
-    console.log(order);
-
     return order;
 }

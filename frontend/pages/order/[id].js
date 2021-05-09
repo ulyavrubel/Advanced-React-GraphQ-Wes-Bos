@@ -35,8 +35,6 @@ export default function SingleOrderPage({query}) {
         variables: {id: query.id}
     });
 
-    console.log(data);
-
     if (loading)
         return <p>...Loading</p>;
 
